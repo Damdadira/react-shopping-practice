@@ -2,6 +2,7 @@
 import { Link } from 'react-router';
 import { FiShoppingBag } from "react-icons/fi";
 import { BsFillPencilFill } from "react-icons/bs";
+import { login } from '../api/firebase';
 
 export default function Navbar() {
   return (
@@ -16,7 +17,8 @@ export default function Navbar() {
         <Link to='/products/new' className='text-2xl'>
           <BsFillPencilFill />
         </Link>
-        <button>Login</button>
+        {/* 콜백함수에서 인자와 호출 인자가 아무것도 없는게 동일해서 생략 */}
+        <button onClick={login}>Login</button> 
       </nav>
     </header>
   )
