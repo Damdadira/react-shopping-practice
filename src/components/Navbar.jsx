@@ -8,17 +8,16 @@ import User from './User';
 export default function Navbar() {
   const [user, setUser] = useState();
 
-  useEffect(() => {
-    onUserStateChange(setUser);
-  }, []);
-
-  /**
+    /**
    * 콜백함수에서 함수의 인자가 같은 경우 생략 가능
    * () => login()
    * (user) => setUser(user)
    * -------------사용 방법-------------------
    * login, setUser
    */
+  useEffect(() => {
+    onUserStateChange(setUser);
+  }, []);
 
   return (
     <header className='flex justify-between border-b border-gray-300 p-2'>
