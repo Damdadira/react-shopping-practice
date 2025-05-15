@@ -3,25 +3,22 @@ import { Link } from 'react-router';
 import { FiShoppingBag } from "react-icons/fi";
 import { BsFillPencilFill } from "react-icons/bs";
 import { login, logout, onUserStateChange } from '../api/firebase';
+import User from './User';
 
 export default function Navbar() {
   const [user, setUser] = useState();
 
   useEffect(() => {
-    onUserStateChange((user) => {
-      console.log(user)
-      setUser(user);
-    })
+    onUserStateChange(setUser);
   }, []);
 
-  const handleLogin = () => {
-    {/* 콜백함수에서 인자와 호출 인자가 아무것도 없는게 동일해서 생략 */}
-    login().then(setUser);
-  }
-
-  const handleLogout = () => {
-    logout().then(setUser);
-  }
+  /**
+   * 콜백함수에서 함수의 인자가 같은 경우 생략 가능
+   * () => login()
+   * (user) => setUser(user)
+   * -------------사용 방법-------------------
+   * login, setUser
+   */
 
   return (
     <header className='flex justify-between border-b border-gray-300 p-2'>
@@ -36,8 +33,12 @@ export default function Navbar() {
           <BsFillPencilFill />
         </Link>
         {!user 
-        ? <button onClick={handleLogin}>Login</button>
-        : <button onClick={handleLogout}>Logout</button>}
+          ? <button onClick={login}>Login</button>
+          : <>
+              <User user={user} />
+              <button onClick={logout}>Logout</button>
+            </>
+        }
       </nav>
     </header>
   )
