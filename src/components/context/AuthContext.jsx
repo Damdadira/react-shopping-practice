@@ -5,6 +5,7 @@ const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
   const [user, setUser] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
     /**
    * 콜백함수에서 함수의 인자가 같은 경우 생략 가능
@@ -13,12 +14,15 @@ export function AuthContextProvider({ children }) {
    * -------------사용 방법-------------------
    * login, setUser
    */
-  
+
   useEffect(() => {
-    onUserStateChange(setUser);
+    onUserStateChange(user => {
+      setIsLoading(false);
+      setUser(user);
+    });
   }, []);
 
-  return <AuthContext.Provider value={{ user, login: login, logout: logout }}>
+  return <AuthContext.Provider value={{ user, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
 }

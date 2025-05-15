@@ -2,7 +2,7 @@ import { Navigate } from 'react-router';
 import { useAuthContext } from '../components/context/AuthContext'
 
 export default function ProtectedRoute({ children, requireAdmin }) {
-  const { user } = useAuthContext();
+  const { user, isLoading } = useAuthContext();
 
   /**
    * 1. 로그인한 사용자가 있는지 확인
@@ -12,12 +12,13 @@ export default function ProtectedRoute({ children, requireAdmin }) {
    * 5. 조건에 맞는 경우에만 전달된 children을 보여줌
    */
 
+  if(isLoading) {
+    return <div>Loading...</div>
+  }
+
   if(!user || (requireAdmin && !user.isAdmin)) {
     return <Navigate to='/' replace />
   }
-  return(
-    <div>
 
-    </div>
-  )
+  return children;
 }
