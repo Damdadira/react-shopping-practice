@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, signOut, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -12,15 +12,26 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
-export function login() {
-  signInWithPopup(auth, provider)
-  .then((result) => {
-    const user = result.user;
-    console.log(user)
-  })
-  /**
-   * 콜백함수에서 함수의 인자와 호출할 인자가 동일한 경우에는 생략 가능
-   * (error) => console.error(error) > 이런식으로 안적어도 됨 
-   */
-  .catch(console.error); 
+export async function login() {
+  return signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      console.log(user)
+      return user;
+    })
+    /**
+     * 콜백함수에서 함수의 인자와 호출할 인자가 동일한 경우에는 생략 가능
+     * (error) => console.error(error) > 이런식으로 안적어도 됨 
+     */
+    .catch(console.error); 
+}
+
+export async function logout() {
+  return signOut(auth).then(() => null);
+}
+
+export function onUserStateChange(callback) {
+  onAuthStateChanged(auth, (user) => {
+    callback(user);
+  });
 }
