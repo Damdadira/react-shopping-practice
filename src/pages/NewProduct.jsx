@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Button from '../components/ui/Button';
+import { uploadImage } from '../api/uploader';
 
 export default function NewProduct() {
   const [product, setProduct] = useState({});
@@ -17,10 +18,16 @@ export default function NewProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     /**
      * 1. 제품 사진을 Cloudinary에 업로드 하고 URL을 획득
      * 2. FireBase에 새로운 제품 추가
      */
+    uploadImage(file)
+    .then(url => {
+      console.log(url)
+    })
+    
   }
 
   return (
