@@ -27,12 +27,12 @@ export default function MyCart() {
                 ))
               }
             </ul>
-            <div className='flex justify-between items-center mb-6 px-2 md:px-8 lg:px-16'>
-              <PriceCard text='상품 총액' price={totalPrice}></PriceCard>
+            <div className='flex justify-between items-center mb-8 px-2 md:px-8 lg:px-16'>
+              <PriceCard text='상품' price={totalPrice}></PriceCard>
               <BsFillPlusCircleFill className='shrink-0' />
-              <PriceCard text='배송액' price={SHIPPING}></PriceCard>
+              <PriceCard text='배송비' price={SHIPPING}></PriceCard>
               <FaEquals />
-              <PriceCard text='총가격' price={totalPrice + SHIPPING}></PriceCard>
+              <PriceCard text='최종 금액' price={totalPrice + SHIPPING}></PriceCard>
             </div>
             <Button text='주문하기'></Button>
           </>

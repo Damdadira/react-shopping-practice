@@ -27,15 +27,17 @@ export default function ProductDetail() {
 
   return (
     <>
-      <p className='mx-12 mt-4 text-gray-700'>{category}</p>
       <section className='flex flex-col md:flex-row p-4'>
         <div className='w-full px-4 basis-7/12'>
           <img src={image} alt={title} />
         </div>
-        <div className='w-full basis-5/12 flex flex-col p-4'>
-          <h2 className='text-3xl font-bold py-2'>{title}</h2>
+        <div className='w-full basis-5/12 flex flex-col gap-6 p-4'>
+          <div>
+            <h2 className='text-3xl font-bold py-2'>{title}</h2>
+            <p className='text-2xl font-semibold' style={{color: 'var(--color-brand)'}}>{category}</p>
+          </div>
           <p className='text-2xl font-bold py-2 border-b border-gray-400'>₩{price}</p>
-          <p className='py-4 text-lg'>{description}</p>
+          <p className='py-2 text-lg'>{description}</p>
           <div className='flex items-center'>
             <label htmlFor='select' className='font-bold' style={{color: 'var(--color-brand)'}}>옵션:</label>
             <select id='select' className='p-2 m-4 flex-1 border-2 border-dashed outline-none' style={{borderColor: 'var(--color-brand)'}} onChange={handleSelect} value={selected}>
