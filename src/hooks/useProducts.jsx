@@ -3,7 +3,7 @@ import { getProducts as fetchProducts, addNewProduct } from '../api/firebase'
 
 export default function useProducts() {
   const queryClient = useQueryClient();
-  
+
   const productsQuery = useQuery({
     queryKey: ['products'],
     queryFn: () => fetchProducts(),

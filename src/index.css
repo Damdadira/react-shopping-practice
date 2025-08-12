@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --color-brand: #F96162
+  --color-brand: #a4aa70
 }
 
 body {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center font-mono;
+  font-family: 'SF Mono', Monaco, Consolas, 'Apple SD Gothic Neo', 'Noto Sans KR';
 }
 
 #root {
