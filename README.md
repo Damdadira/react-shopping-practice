@@ -165,3 +165,33 @@
  ┣ 📜index.css
  ┗ 📜main.jsx
 ```
+<br/>
+
+## 🎯 실행 방법
+- **Node.js 18 이상 권장**
+- **Firebase, Cloudinary 개인 키 필요**
+<br/>
+
+### API Key 설정
+- 프로젝트 루트에 `.env`파일을 만들고 아래와 같이 설정하세요.
+```
+VITE_FIREBASE_API_KEY=발급 받은 키
+VITE_FIREBASE_AUTH_DOMAIN=발급 받은 키
+VITE_FIREBASE_DB_URL=발급 받은 키
+VITE_FIREBASE_PROJECT_ID=발급 받은 키
+VITE_CLOUDINARY_PRESET=발급 받은 키
+VITE_CLOUDINARY_URL=발급 받은 키
+```
+
+### 실행
+```bash
+# 패키지 설치
+npm install   # 또는 npm i
+
+# 개발 서버 실행
+npm run dev
+```
+<br/>
+
+## 📍 홈페이지 주소
+https://young-style.netlify.app/
