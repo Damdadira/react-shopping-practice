@@ -34,25 +34,44 @@
 
 ## 💡 주요 기능 및 구현
 <details>
- <summary><h3 style="display:inline; margin-left:4px">로그인 기능</h3></summary>
+ <summary><h3 style="display:inline; margin-left:4px">구글 로그인/로그아웃 기능</h3></summary>
  
-- 
+- **Firebase Authentication**의 GoogleAuthProvider를 사용하여 팝업 기반 구글 로그인 및 로그아웃 기능 구현
+- `prompt: 'select_account'` 옵션으로 계정 선택 화면 제공
 </details>
 
 <details>
- <summary><h3 style="display:inline; margin-left:4px">제품 등록 기능</h3></summary>
+ <summary><h3 style="display:inline; margin-left:4px">제품 목록 조회 기능</h3></summary>
  
-- 
+- **Firebase Realtime Database**에서 `products` 데이터 조회
+- 존재하는 경우 배열 형태로 변환 후 반환
 </details>
 
 <details>
- <summary><h3 style="display:inline; margin-left:4px">장바구니 추가 기능</h3></summary>
+ <summary><h3 style="display:inline; margin-left:4px">새로운 제품 등록 기능</h3></summary>
  
-- 
+- 고유 ID(`uuid`)를 생성하여 제품 식별
+- 이미지 파일은 Cloudinary에 업로드 후 URL 저장
+- 가격 데이터는 숫자형으로 변환, 옵션은 배열로 변환하여 저장
 </details>
 
 <details>
- <summary><h3 style="display:inline; margin-left:4px">장바구니 상품 제거 기능</h3></summary>
+ <summary><h3 style="display:inline; margin-left:4px">장바구니 조회 기능</h3></summary>
  
-- 
+- 사용자별 장바구니 데이터를 **Firebase Realtime Database**에서 `carts` 데이터 조회
+- 빈 경우 빈 배열을 반환하여 예외 처리
+</details>
+
+<details>
+ <summary><h3 style="display:inline; margin-left:4px">장바구니 추가/수정 기능</h3></summary>
+ 
+- 사용자 장바구니에 새로운 제품 추가 또는 기존 제품 정보 업데이트
+- 데이터 저장 경로: `carts/{userId}/{productId}`
+</details>
+
+<details>
+ <summary><h3 style="display:inline; margin-left:4px">장바구니 삭제 기능</h3></summary>
+ 
+- 사용자 장바구니에서 특정 제품 데이터 삭제
+- 데이터 삭제 경로: `carts/{userId}/{productId}`
 </details>
