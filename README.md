@@ -5,6 +5,5 @@
 ## 🖥 화면 구성
 <details>
  <summary><h3 style="display:inline; margin-left:4px">1️⃣ 메인 화면(로그인)</h3></summary>
- <img src="/images/readme/main-login.png" />
- <img src="/images/banner.png" />
+ <img src=".github/assets/main-login.png" />
 </details>
