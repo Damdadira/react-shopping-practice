@@ -109,3 +109,24 @@
     </tbody>
   </table>
   <br/>
+
+## 🛠 기술 스택
+#### 🕹 프론트엔드
+- **프레임워크/빌드:**
+  <img src="https://img.shields.io/badge/React-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" />&nbsp;
+  <img src="https://img.shields.io/badge/Vite-%23646CFF.svg?style=flat-square&logo=vite&logoColor=white" />
+- **라우팅:** <img src="https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=react-router&logoColor=white" />
+- **상태 관리:**
+  <img src="https://img.shields.io/badge/Context_API-000000?style=flat-square&logoColor=white" />&nbsp;
+  <img src="https://img.shields.io/badge/-React%20Query-FF4154?style=flat-square&logo=react%20query&logoColor=white" />
+- **스타일링:** <img src="https://img.shields.io/badge/Tailwind_CSS-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" />
+- **API:** Firebase에서 제공하는 API
+- **데이터베이스:** Firebase Realtime Database
+- **인증:** Firebase Authentication
+- **미디어 관리:** Cloudinary
+<br/>
+
+#### 🚀 배포 도구
+- **플랫폼:**
+  <img src="https://img.shields.io/badge/Netlify-%23000000.svg?style=flat-square&logo=netlify&logoColor=#00C7B7">
+<br/>
