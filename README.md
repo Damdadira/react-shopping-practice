@@ -30,3 +30,29 @@
  <summary><h3 style="display:inline; margin-left:4px">5️⃣ 장바구니 화면</h3></summary>
  <img src=".github/assets/my-cart.png" />
 </details>
+<br/>
+
+## 💡 주요 기능 및 구현
+<details>
+ <summary><h3 style="display:inline; margin-left:4px">로그인 기능</h3></summary>
+ 
+- 
+</details>
+
+<details>
+ <summary><h3 style="display:inline; margin-left:4px">제품 등록 기능</h3></summary>
+ 
+- 
+</details>
+
+<details>
+ <summary><h3 style="display:inline; margin-left:4px">장바구니 추가 기능</h3></summary>
+ 
+- 
+</details>
+
+<details>
+ <summary><h3 style="display:inline; margin-left:4px">장바구니 상품 제거 기능</h3></summary>
+ 
+- 
+</details>
