@@ -130,3 +130,38 @@
 - **플랫폼:**
   <img src="https://img.shields.io/badge/Netlify-%23000000.svg?style=flat-square&logo=netlify&logoColor=#00C7B7">
 <br/>
+
+## 🧩 폴더 구조
+```
+📦src
+ ┣ 📂api
+ ┃ ┣ 📜firebase.js                     // Firebase API 호출 모듈 (인증, 데이터베이스 CRUD)
+ ┃ ┗ 📜uploader.js                     // Cloudinary 이미지 업로드 모듈
+ ┣ 📂components
+ ┃ ┣ 📂ui
+ ┃ ┃ ┗ 📜Button.jsx                    // 공통 버튼 UI 컴포넌트
+ ┃ ┣ 📜Banner.jsx                      // 메인 배너 컴포넌트
+ ┃ ┣ 📜CartItem.jsx                    // 장바구니 아이템 컴포넌트(추가/수정/삭제 기능 포함)
+ ┃ ┣ 📜CartStatus.jsx                  // 네비게이션 장바구니 개수 표시 컴포넌트
+ ┃ ┣ 📜Navbar.jsx                      // 상단 네비게이션 바 컴포넌트
+ ┃ ┣ 📜PriceCard.jsx                   // 장바구니 총액 표시 카드 컴포넌트
+ ┃ ┣ 📜ProductCard.jsx                 // 개별 제품 카드 컴포넌트
+ ┃ ┣ 📜Products.jsx                    // 제품 카드 목록 컴포넌트
+ ┃ ┗ 📜User.jsx                        // 네비게이션 사용자 정보(프로필 사진, 이름) 컴포넌트
+ ┣ 📂context
+ ┃ ┗ 📜AuthContext.jsx                 // 로그인/로그아웃 상태 관리 Context
+ ┣ 📂hooks
+ ┃ ┣ 📜useCart.jsx                     // 장바구니 관련 커스텀 훅
+ ┃ ┗ 📜useProducts.jsx                 // 제품 관련 커스텀 훅
+ ┣ 📂pages
+ ┃ ┣ 📜AllProducts.jsx                 // 전체 제품 목록 페이지
+ ┃ ┣ 📜Home.jsx                        // 홈 페이지 (배너 + 제품 목록)
+ ┃ ┣ 📜MyCart.jsx                      // 장바구니 페이지
+ ┃ ┣ 📜NewProduct.jsx                  // 신제품 등록 페이지
+ ┃ ┣ 📜NotFound.jsx                    // 에러 페이지
+ ┃ ┣ 📜ProductDetail.jsx               // 제품 상세 정보 페이지
+ ┃ ┗ 📜ProtectedRoute.jsx              // 관리자 전용 라우팅 처리 (권한 검증)
+ ┣ 📜App.jsx
+ ┣ 📜index.css
+ ┗ 📜main.jsx
+```
